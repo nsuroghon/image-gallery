@@ -2,9 +2,13 @@
 
 function App() {
   return (
-    <div className="App">
-      <h1 className="text-3xl">Hello World</h1>
-    </div>
+      <div className="card max-w-sm rounded overflow-hidden shadow-lg">
+        <img className="w-full" src="https://source.unsplash.com/random" alt=""></img>
+        
+
+        
+      </div>
+
   );
 }
 
