@@ -13,6 +13,16 @@ function App() {
                 Views: 1000
               </strong>
             </li>
+            <li>
+              <strong>
+                Downloads: 100
+              </strong>
+            </li>
+            <li>
+              <strong>
+                Likes: 500
+              </strong>
+            </li>
           </ul>
         
       </div>
