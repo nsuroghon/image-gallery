@@ -2,16 +2,17 @@ import React, { useState, useEffect } from "react";
 
 function App() {
   const [images , setImage] = useState([]);
-  const [isLoading, setIsLoading] =useState(true);
+  const [isLoading, setIsLoading] = useState(true);
   // if left empty returns random photos
-  const [term, setTerm] = useState("")
+  const [term, setTerm] = useState("");
 
   useEffect(() => {
-    fetch(`https://pixabay.com/api/?key=${process.env.KEY}=${term}&image_type=photo&pretty=true`)
+    fetch(`https://pixabay.com/api/?key=${process.env
+    .KEY}&q=${term}&image_type=photo&pretty=true`)
     .then(res => res.json())
     .then(data => console.log(data))
     .catch(err => console.log(err))
-  }), [];
+  }, []);
 
   return (
       <div className="max-w-sm rounded overflow-hidden shadow-lg">
