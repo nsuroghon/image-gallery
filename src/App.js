@@ -7,9 +7,8 @@ function App() {
   const [term, setTerm] = useState("");
 
   useEffect(() => {
-    fetch(`https://pixabay.com/api/?key=${process.env
-    .KEY}&q=${term}&image_type=photo&pretty=true`)
-    .then(res => res.json())
+    fetch(`https://pixabay.com/api/?key=22126125-95b100b3f165139e739090fac&q=${term}&image_type=photo&pretty=true`)
+    .then(async res => res.json())
     .then(data => console.log(data))
     .catch(err => console.log(err))
   }, []);
