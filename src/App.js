@@ -8,10 +8,10 @@ function App() {
 
   useEffect(() => {
     fetch(`https://pixabay.com/api/?key=${process.env.KEY}=${term}&image_type=photo&pretty=true`)
-    return () => {
-      cleanup
-    }
-  }, [input])
+    .then(res => res.json())
+    .then(data => console.log(data))
+    .catch(err => console.log(err))
+  }), [];
 
   return (
       <div className="max-w-sm rounded overflow-hidden shadow-lg">
