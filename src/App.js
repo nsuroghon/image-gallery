@@ -3,7 +3,15 @@ import React, { useState, useEffect } from "react";
 function App() {
   const [images , setImage] = useState([]);
   const [isLoading, setIsLoading] =useState(true);
+  // if left empty returns random photos
   const [term, setTerm] = useState("")
+
+  useEffect(() => {
+    fetch(`https://pixabay.com/api/?key=${process.env.KEY}=${term}&image_type=photo&pretty=true`)
+    return () => {
+      cleanup
+    }
+  }, [input])
 
   return (
       <div className="max-w-sm rounded overflow-hidden shadow-lg">
