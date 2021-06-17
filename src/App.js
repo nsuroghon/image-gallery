@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 function App() {
   const [images , setImage] = useState([]);
   const [isLoading, setIsLoading] =useState(true);
+  const [term, setTerm] = useState("")
 
   return (
       <div className="max-w-sm rounded overflow-hidden shadow-lg">
