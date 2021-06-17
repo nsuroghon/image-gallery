@@ -1,6 +1,9 @@
-
+import React, { useState, useEffect } from "react";
 
 function App() {
+  const [images , setImage] = useState([]);
+  const [isLoading, setIsLoading] =useState(true);
+
   return (
       <div className="max-w-sm rounded overflow-hidden shadow-lg">
         <img className="w-full" src="https://source.unsplash.com/random" alt=""></img>
