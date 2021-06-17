@@ -2,7 +2,7 @@
 
 function App() {
   return (
-      <div className="card max-w-sm rounded overflow-hidden shadow-lg">
+      <div className="max-w-sm rounded overflow-hidden shadow-lg">
         <img className="w-full" src="https://source.unsplash.com/random" alt=""></img>
         
         {/* photographer */}
@@ -28,7 +28,20 @@ function App() {
               </strong>
             </li>
           </ul>
-        
+        <div className="px-6 py-4">
+          <span className="inline-block bg-gray-200 rounded-full px-3 py-1 
+          text-sm font-semibold text-gray-700 mr-2">
+            #tag1
+          </span>
+          <span className="inline-block bg-gray-200 rounded-full px-3 py-1 
+          text-sm font-semibold text-gray-700 mr-2">
+            #tag1
+          </span>
+          <span className="inline-block bg-gray-200 rounded-full px-3 py-1 
+          text-sm font-semibold text-gray-700 mr-2">
+            #tag1
+          </span>
+        </div>
       </div>
 
   );
