@@ -9,7 +9,7 @@ function App() {
 
   useEffect(() => {
     fetch(`https://pixabay.com/api/?key=22126125-95b100b3f165139e739090fac&q=${term}&image_type=photo&pretty=true`)
-    .then(async res => res.json())
+    .then( res => res.json())
     .then(data => {
       setImages(data.hits);
       setIsLoading(false);
@@ -19,7 +19,12 @@ function App() {
 
   return (
     <div className="container mx-auto">
-      <div className="grid grid-cols-4 gap-4"></div>
+      <div className="grid grid-cols-4 gap-4">
+        {images.map(image => {
+          <Card  key={image.id} image={image}/> 
+        })}
+      </div>
+
     </div>
       // <Card />
 
