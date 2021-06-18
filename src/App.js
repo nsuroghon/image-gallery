@@ -16,11 +16,12 @@ function App() {
       setIsLoading(false);
     })
     .catch(err => console.log(err))
-  }, []);
+    // whenever the search term changes makes sure the fetch called again with new parameter
+  }, [term]);
 
   return (
     <div className="container mx-auto">
-      <Search />
+      <Search searchText={(text) => setTerm(text)}/>
       {isLoading ? <h1 className="text-6xl text-center mx-auto mt-32">Loading...</h1>: <div className="grid grid-cols-4 gap-4">
         {images.map(image => (
           <Card key={image.id} image={image}/>
