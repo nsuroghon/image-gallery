@@ -20,13 +20,11 @@ function App() {
   return (
     <div className="container mx-auto">
       <div className="grid grid-cols-4 gap-4">
-        {images.map(image => {
-          <Card  key={image.id} image={image}/> 
-        })}
+        {images.map(image => (
+          <Card key={image.id} image={image}/>
+        ))}
       </div>
-
     </div>
-      // <Card />
 
   );
 }

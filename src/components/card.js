@@ -1,9 +1,9 @@
 import React from 'react'
 
-const Card = ({ image }) => {
+const Card = () => {
     return (
         <div className="max-w-sm rounded overflow-hidden shadow-lg">
-        <img className="w-full" src={image.webformatURL} alt=""></img>
+        <img className="w-full" src="https://source.unsplash.com/random" alt=""></img>
         
         {/* photographer */}
         <div className="px-6 py-4">
