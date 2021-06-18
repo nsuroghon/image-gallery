@@ -14,17 +14,17 @@ const Card = ({ image }) => {
           <ul>
             <li>
               <strong>
-                Views: 1000
+                Views: {image.views}
               </strong>
             </li>
             <li>
               <strong>
-                Downloads: 100
+              Downloads: {image.downloads}
               </strong>
             </li>
             <li>
               <strong>
-                Likes: 500
+                Likes: {image.liked}
               </strong>
             </li>
           </ul>
