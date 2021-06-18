@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Card from "./components/card";
+import Search from "./components/search";
 
 function App() {
   const [images , setImages] = useState([]);
@@ -19,11 +20,12 @@ function App() {
 
   return (
     <div className="container mx-auto">
-      <div className="grid grid-cols-4 gap-4">
+      <Search />
+      {isLoading ? <h1 className="text-6xl text-center mx-auto mt-32">Loading...</h1>: <div className="grid grid-cols-4 gap-4">
         {images.map(image => (
           <Card key={image.id} image={image}/>
         ))}
-      </div>
+      </div>}
     </div>
 
   );
