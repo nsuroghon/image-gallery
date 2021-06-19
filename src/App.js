@@ -20,13 +20,19 @@ function App() {
   }, [term]);
 
   return (
-    <div className="container mx-auto">
-      <Search searchText={(text) => setTerm(text)}/>
-      {isLoading ? <h1 className="text-6xl text-center mx-auto mt-32">Loading...</h1>: <div className="grid grid-cols-4 gap-4">
+    <div className="app">
+      <nav className="border-b-2 border-gray-600 w-full mx-none">
+        <Search searchText={(text) => setTerm(text)}/>
+      </nav>
+      
+      <div className="container mx-auto py-2">
+        {/* <Search searchText={(text) => setTerm(text)}/> */}
+        {isLoading ? <h1 className="text-6xl text-center mx-auto mt-32">Loading...</h1>: <div className="grid grid-cols-4 gap-4">
         {images.map(image => (
           <Card key={image.id} image={image}/>
         ))}
       </div>}
+      </div>
     </div>
 
   );
