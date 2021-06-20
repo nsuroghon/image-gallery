@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Card from "./components/card";
 import Search from "./components/search";
-import { FaCameraRetro } from 'react-icons/fa';
+import { SiAffinityphoto } from 'react-icons/si';
 
 function App() {
   const [images , setImages] = useState([]);
@@ -22,10 +22,13 @@ function App() {
 
   return (
     <div className="app">
-      <nav className="border-b-2 border-gray-600 w-full mx-auto my-auto">
-        <div> 
-          <FaCameraRetro />
-          <h1> Photos for Everyone </h1> 
+      <nav className="border-b-2 border-gray-600 w-full mx-none">
+        <div className="flex items-center ml-4 my-2"> 
+          <SiAffinityphoto size="3em"/>
+          <div className="pl-2">
+            <h1 className="text-black font-bold">Gallery.app</h1>
+            <h1> Photos for Everyone </h1> 
+          </div>
         </div>
         
         <Search searchText={(text) => setTerm(text)}/>
