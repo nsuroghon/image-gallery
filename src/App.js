@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Card from "./components/card";
 import Search from "./components/search";
+import { FaCameraRetro } from 'react-icons/fa';
 
 function App() {
   const [images , setImages] = useState([]);
@@ -21,7 +22,12 @@ function App() {
 
   return (
     <div className="app">
-      <nav className="border-b-2 border-gray-600 w-full mx-none">
+      <nav className="border-b-2 border-gray-600 w-full mx-auto my-auto">
+        <div> 
+          <FaCameraRetro />
+          <h1> Photos for Everyone </h1> 
+        </div>
+        
         <Search searchText={(text) => setTerm(text)}/>
       </nav>
       
