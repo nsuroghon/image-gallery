@@ -26,7 +26,6 @@ function App() {
       </nav>
       
       <div className="container mx-auto py-2">
-        {/* <Search searchText={(text) => setTerm(text)}/> */}
         {isLoading ? <h1 className="text-6xl text-center mx-auto mt-32">Loading...</h1>: <div className="grid grid-cols-4 gap-4">
         {images.map(image => (
           <Card key={image.id} image={image}/>
