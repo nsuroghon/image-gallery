@@ -28,8 +28,8 @@ function App() {
         <div className="flex items-center justify-self-start ml-4 my-2"> 
           <SiAffinityphoto size="3em"/>
           <div className="pl-2">
-            <h1 className="text-black font-bold">Gallery.app</h1>
-            <h1> Photos for Everyone </h1> 
+            <h1 className="text-grey-800 font-serif font-medium text-xl antialiased">Gallery</h1>
+            <h1 className="text-sm font-serif font-light"> Photos for Everyone </h1> 
           </div>
         </div>
         <Search searchText={(text) => setTerm(text)}/>
