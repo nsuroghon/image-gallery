@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { GoSearch } from 'react-icons/go';
 
 const Search = ({ searchText }) => {
     const [text, setText] = useState('')
@@ -10,16 +11,16 @@ const Search = ({ searchText }) => {
     }
 
     return (
-    <div className="flex justify-center">
-      <form onSubmit={onSubmit} className="form-inline my-2 w-full max-w-md border-gray-800 border-2 rounded">
-            <div className="flex items-center border-b">
-            <input
-                className="px-2 w-full appearance-none bg-transparent border-none text-gray-700 mr-3 leading-tight focus:outline-none"
+    <div className="flex justify-center rounded-full shadow-xl ml-8 my-2">
+      <form onSubmit={onSubmit} className="rounded-full w-full  px-6 leading-tight focus:outline-none bg-gray-200">
+            <div className="flex items-center">
+                <input
+                className="rounded-l-full w-full py-2 px-6 mt-2 text-gray-900 bg-gray-200 leading-tight focus:outline-none"
                 onChange={e => setText(e.target.value)}
                 type="text"
-                placeholder="Enter Image Term..."
-            />
-           <button class="px-4 py-1 mr-2 mt-2 mb-2  text-sm     font-medium   rounded-full block  border-b border-purple-300 bg-indigo-200 hover:bg-indigo-300 text-indigo-900" type="submit">Search</button>
+                placeholder="Search free high-resolution photos..."
+                />
+                <button className="bg-none text-gray-600 hover:text-gray-900 focus:outline-none w-12 h-8 mt-2 flex items-center justify-center"><GoSearch /></button>
             </div>
         </form>
     </div>
