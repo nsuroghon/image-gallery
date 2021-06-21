@@ -6,16 +6,18 @@ const Card = ({ image }) => {
 
 
     return (
-        <div className="max-w-sm rounded overflow-hidden shadow-lg">
-        <img className="w-full" src={image.webformatURL} alt=""></img>
+      <div className="max-w-auto h-auto overflow-hidden">
+        <img className="w-full h-auto" src={image.webformatURL} alt=""></img>
         
         {/* photographer */}
-        <div className="px-6 py-4">
+
+        {/* <div className="px-6 py-4">
           <div className="font-bold text-xl text-purple-500 mb-2">Photo by {image.user}</div>
-        </div>
+        </div> */}
 
         {/* Sub headings */}
-          <ul>
+
+          {/* <ul>
             <li>
               <strong>
                 Views: {image.views}
@@ -31,12 +33,16 @@ const Card = ({ image }) => {
                 Likes: {image.liked}
               </strong>
             </li>
-          </ul>
-        <div className="px-6 py-4">
+          </ul> */}
+
+
+          {/* tags */}
+
+        <div className="py-2 w-full grid-cols-3 justify-start">
             {tags.map((tag, index) => (
-                <span key={index} className="inline-block bg-gray-200 rounded-full px-3 py-1 
-                text-sm font-semibold text-gray-700 mr-2">
-                #{tag}
+                <span key={index} className="inline-block bg-gray-100 px-2 py-1 
+                text-sm font-serif text-gray-600 m-1">
+                {tag}
             </span>
             ))}
         </div>

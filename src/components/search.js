@@ -24,6 +24,7 @@ const Search = ({ searchText }) => {
             </div>
         </form>
     </div>
+
     )
 }
 
