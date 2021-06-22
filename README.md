@@ -1,6 +1,6 @@
 # Gallery App 
 
-Link to our deployed app: [Gallery App]()
+Link to our deployed app: [Gallery App](https://nsuroghon.github.io/image-gallery/)
 
 ## Developer
 
