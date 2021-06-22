@@ -24,7 +24,7 @@ function App() {
     <div className="app">
 
       {/* Navigation */}
-      <nav className="grid grid-flow-col grid-cols-3 shadow sticky top-0 bg-white w-full mx-none">
+      <nav className="grid grid-flow-col grid-cols-3 shadow sticky top-0 bg-white w-full mx-none pb-4">
         <div className="flex items-center justify-self-start ml-4 my-2"> 
           <SiAffinityphoto size="3em"/>
           <div className="pl-2">
@@ -35,9 +35,11 @@ function App() {
         <Search searchText={(text) => setTerm(text)}/>
         <div></div>
       </nav>
+
+      <h1 className="font-bold text-6xl py-10 mx-20">{term}</h1>
     
       {/* Gallery */}
-      <div className="container mx-auto py-2">
+      <div className="container mx-auto py-5">
         {isLoading ? 
           <h1 className="text-6xl text-center mx-auto mt-32">Loading...</h1>: 
           
