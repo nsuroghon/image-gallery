@@ -12,7 +12,7 @@ A gallery with high-resolution images gathered from Pixabay API. Designed to dis
 
 ## App Preview
 
-![DevWeb App Demo](/src/assets/img/Screen Shot 2021-06-22 at 12.08.56 PM.png)
+![DevWeb App Demo](https://github.com/nsuroghon/image-gallery/blob/main/src/assets/img/Screen%20Shot%202021-06-22%20at%2012.08.56%20PM.png)
 
 
 ## Libraries Used
