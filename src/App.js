@@ -28,8 +28,8 @@ function App() {
         <div className="flex items-center justify-self-start ml-4 my-2"> 
           <SiAffinityphoto size="3em"/>
           <div className="pl-2">
-            <h1 className="text-grey-800 font-serif font-medium text-xl antialiased">Gallery</h1>
-            <h1 className="text-sm font-serif font-light"> Photos for Everyone </h1> 
+            <h1 className="text-grey-800 font-serif font-medium text-xl antialiased">Gallery App</h1>
+            <h1 className="text-sm font-serif font-light"> HD photos for everyone </h1> 
           </div>
         </div>
         <Search searchText={(text) => setTerm(text)}/>
@@ -41,8 +41,9 @@ function App() {
         {isLoading ? 
           <h1 className="text-6xl text-center mx-auto mt-32">Loading...</h1>: 
           
-          <div className="grid grid-cols-3 gap-x-6 gap-y-6">
-            {images.map(image => (
+          // <div className="grid grid-flow-row-dense grid-cols-3 gap-x-6 gap-y-6">
+          <div className="masonry before:box-inherit after:box-inherit overflow-y-scroll">
+          {images.map(image => (
             <Card key={image.id} image={image}/>
             ))}
           </div>}

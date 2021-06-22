@@ -6,8 +6,8 @@ const Card = ({ image }) => {
 
 
     return (
-      <div className="max-w-auto h-auto overflow-hidden">
-        <img className="w-full h-auto" src={image.webformatURL} alt=""></img>
+      <div className="m-0 pb-0 break-inside">
+        <img className="" src={image.webformatURL} alt=""></img>
         
         {/* photographer */}
 
