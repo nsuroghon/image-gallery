@@ -14,6 +14,13 @@
       break-inside: avoid;
     }
   }
+  @media (max-width: 640px) { 
+    .masonry {
+      column-count: 1;
+      margin-right: 30px;
+      margin-left: 30px;
+    }
+  }
 }
 
 body {

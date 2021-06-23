@@ -44,7 +44,7 @@ function App() {
           <h1 className="text-6xl text-center mx-auto mt-32">Loading...</h1>: 
           
           // <div className="grid grid-flow-row-dense grid-cols-3 gap-x-6 gap-y-6">
-          <div className="masonry before:box-inherit after:box-inherit overflow-y-scroll sm:grid-cols-1">
+          <div className="masonry before:box-inherit after:box-inherit overflow-y-scroll">
           {images.map(image => (
             <Card key={image.id} image={image}/>
             ))}
