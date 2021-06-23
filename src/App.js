@@ -28,7 +28,7 @@ function App() {
         <div className="flex items-center justify-self-start ml-4 my-2"> 
           <SiAffinityphoto size="3em"/>
           <div className="pl-2">
-            <h1 className="text-grey-800 font-serif font-medium text-xl antialiased">Gallery App</h1>
+            <h1 className="text-grey-800 font-serif font-medium text-xl sm:text-sm antialiased">Gallery App</h1>
             <h1 className="text-sm font-serif font-light"> HD photos for everyone </h1> 
           </div>
         </div>
@@ -36,15 +36,15 @@ function App() {
         <div></div>
       </nav>
 
-      <h1 className="font-bold text-6xl py-10 mx-20">{term}</h1>
+      <h1 className="font-bold text-6xl py-8 mx-20">{term}</h1>
     
       {/* Gallery */}
-      <div className="container mx-auto py-5">
+      <div className="container mx-auto py-0">
         {isLoading ? 
           <h1 className="text-6xl text-center mx-auto mt-32">Loading...</h1>: 
           
           // <div className="grid grid-flow-row-dense grid-cols-3 gap-x-6 gap-y-6">
-          <div className="masonry before:box-inherit after:box-inherit overflow-y-scroll">
+          <div className="masonry before:box-inherit after:box-inherit overflow-y-scroll sm:grid-cols-1">
           {images.map(image => (
             <Card key={image.id} image={image}/>
             ))}

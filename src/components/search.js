@@ -11,7 +11,7 @@ const Search = ({ searchText }) => {
     }
 
     return (
-    <div className="flex justify-center rounded-full shadow-xl ml-8 my-2">
+    <div className="flex justify-center sm:justify-end rounded-full shadow-xl ml-8 my-2">
       <form onSubmit={onSubmit} className="rounded-full w-full  px-6 leading-tight focus:outline-none bg-gray-100">
             <div className="flex items-center">
                 <input
