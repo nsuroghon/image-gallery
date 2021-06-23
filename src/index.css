@@ -14,11 +14,14 @@
       break-inside: avoid;
     }
   }
-  @media (max-width: 640px) { 
+  @media (max-width: 767.98px) { 
     .masonry {
       column-count: 1;
       margin-right: 30px;
       margin-left: 30px;
+    }
+    nav {
+      column-count: 1;
     }
   }
 }
