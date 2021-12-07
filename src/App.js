@@ -1,7 +1,13 @@
 import React, { useState, useEffect } from "react";
-import Card from "./components/card";
-import Search from "./components/search";
+import Card from "./components/Card";
+import Navbar from "./components/Navbar"
+// import NavBar from "./components/Navbar";
+import Search from "./components/Search";
 import { SiAffinityphoto } from 'react-icons/si';
+import LoginButton from "./components/LoginButton";
+import SignupButton from "./components/SignupButton";
+import LogoutButton from "./components/LogoutButton";
+import AuthenticationButton from "./components/AuthenticationButton";
 
 function App() {
   const [images , setImages] = useState([]);
@@ -22,19 +28,7 @@ function App() {
 
   return (
     <div className="app">
-
-      {/* Navigation */}
-      <nav className="grid grid-flow-col grid-cols-2 sm:grid-cols-3 shadow sticky top-0 bg-white w-full mx-none pb-4">
-        <div className="flex items-center justify-self-start ml-4 my-2"> 
-          <SiAffinityphoto size="3em"/>
-          <div className="pl-2">
-            <h1 className="text-grey-800 font-serif font-bold lg:font-medium text-sm lg:text-xl antialiased">Gallery App</h1>
-            <h1 className="text-sm lg:text-sm font-serif font-light"> HD photos for everyone </h1> 
-          </div>
-        </div>
-        <Search searchText={(text) => setTerm(text)}/>
-        {/* <div></div> */}
-      </nav>
+      <Navbar />
 
       <h1 className="font-bold text-6xl py-8 mx-8 lg:mx-20">{term}</h1>
     
