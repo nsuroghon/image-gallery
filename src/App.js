@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Card from "./components/Card";
-import Navbar from "./components/Navbar"
+import Navbar from "./components/Navbar";
+import Loading from './components/Loading';
 // import NavBar from "./components/Navbar";
 import Search from "./components/Search";
 import { SiAffinityphoto } from 'react-icons/si';
@@ -26,6 +27,12 @@ function App() {
     .catch(err => console.log(err))
     // whenever the search term changes makes sure the fetch called again with new parameter
   }, [term]);
+
+  const { checkLoading } = useAuth0();
+
+  if (checkLoading) {
+    return <Loading />;
+  }
 
   return (
     <div className="app">
