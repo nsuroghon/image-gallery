@@ -8,6 +8,7 @@ import LoginButton from "./components/LoginButton";
 import SignupButton from "./components/SignupButton";
 import LogoutButton from "./components/LogoutButton";
 import AuthenticationButton from "./components/AuthenticationButton";
+import { useAuth0 } from "@auth0/auth0-react";
 
 function App() {
   const [images , setImages] = useState([]);
