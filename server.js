@@ -1,6 +1,7 @@
 // require statements
 const express = require("express");
 const cors = require('cors');
+const mongoose = require("mongoose");
 
 // storing environment variables in .env file
 require('dotenv').config();
@@ -9,7 +10,6 @@ require('dotenv').config();
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-const mongoose = require("mongoose");
 
 // middlewear
 app.use(cors({
@@ -31,14 +31,16 @@ app.use(express.json());
 // app.use(routes);
 
 // Connect to the Mongo DB
-// mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/debwebDB",
-//   {
-//     useNewUrlParser: true,
-//     useUnifiedTopology: true,
-//     useCreateIndex: true,
-//     useFindAndModify: false
-//   }
-// );
+mongoose.connect(process.env.MONGODB_URI,
+  {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  }
+);
+
+mongoose.connection.once('open', () => {
+    console.log("MongoDB database connection successful")
+})
 
 // Start the server
 app.listen(PORT, function() {
