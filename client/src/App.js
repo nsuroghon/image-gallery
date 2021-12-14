@@ -1,15 +1,14 @@
 import React, { useState, useEffect } from "react";
+
 import Card from "./components/Card";
 import Navbar from "./components/Navbar";
 import Loading from './components/Loading';
-// import NavBar from "./components/Navbar";
-import Search from "./components/Search";
-import { SiAffinityphoto } from 'react-icons/si';
-import LoginButton from "./components/LoginButton";
-import SignupButton from "./components/SignupButton";
-import LogoutButton from "./components/LogoutButton";
-import AuthenticationButton from "./components/AuthenticationButton";
+
+// import { Home, Profile, ExternalApi } from './views';
+
+import { Route, Switch } from 'react-router-dom';
 import { useAuth0 } from "@auth0/auth0-react";
+import Gallery from "./components/Gallery";
 
 function App() {
   const [images , setImages] = useState([]);
@@ -37,23 +36,8 @@ function App() {
   return (
     <div className="app">
       <Navbar />
-
-      <h1 className="font-bold text-6xl py-8 mx-8 lg:mx-20">{term}</h1>
-    
-      {/* Gallery */}
-      <div className="container mx-auto py-0">
-        {isLoading ? 
-          <h1 className="text-6xl text-center mx-auto mt-32">Loading...</h1>: 
-          
-          // <div className="grid grid-flow-row-dense grid-cols-3 gap-x-6 gap-y-6">
-          <div className="masonry before:box-inherit after:box-inherit overflow-y-scroll">
-          {images.map(image => (
-            <Card key={image.id} image={image}/>
-            ))}
-          </div>}
-      </div>
+      <Gallery />
     </div>
-
   );
 }
 
