@@ -6,7 +6,7 @@ import Loading from './components/Loading';
 
 // import { Home, Profile, ExternalApi } from './views';
 
-import { Route, Switch } from 'react-router-dom';
+import { Route, Router, Switch } from 'react-router-dom';
 import { useAuth0 } from "@auth0/auth0-react";
 import Gallery from "./components/Gallery";
 
@@ -35,8 +35,12 @@ function App() {
 
   return (
     <div className="app">
-      <Navbar />
-      <Gallery />
+      <Router>
+        <Navbar />
+        <br/>
+        <Route path="/" component={Home} />
+      </Router>
+      {/* <Gallery /> */}
     </div>
   );
 }

@@ -5,11 +5,12 @@ import Gallery from "../components/Gallery";
 
 const Home = () => (
   <Fragment>
-    <Navbar />
+    <h1>Hello World!</h1>
+    {/* <Navbar />
 
     <h1 className="font-bold text-6xl py-8 mx-8 lg:mx-20">{term}</h1>
     
-    <Gallery />
+    <Gallery /> */}
 
   </Fragment>
 );
