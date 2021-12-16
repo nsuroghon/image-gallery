@@ -8,12 +8,12 @@ require('dotenv').config();
 
 //create express server
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3001;
 
 
 // middlewear
 app.use(cors({
-  origin: 'http://localhost:3000',
+  origin: 'http://localhost:3001',
   credentials: true
 }));
 

@@ -35,12 +35,9 @@ function App() {
 
   return (
     <div className="app">
-      <Router>
-        <Navbar />
-        <br/>
-        <Route path="/" component={Home} />
-      </Router>
-      {/* <Gallery /> */}
+      {/* <Router> */}
+        <h1>Hello World!</h1>
+      {/* </Router> */}
     </div>
   );
 }
