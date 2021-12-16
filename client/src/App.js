@@ -1,14 +1,12 @@
 import React, { useState, useEffect } from "react";
 
-import Card from "./components/Card";
-import Navbar from "./components/Navbar";
+// Pages
+import Home from "./pages/home";
 import Loading from './components/Loading';
 
 // import { Home, Profile, ExternalApi } from './views';
-
-import { Route, Router, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Redirect, Route, Switch, Link, useHistory } from "react-router-dom";
 import { useAuth0 } from "@auth0/auth0-react";
-import Gallery from "./components/Gallery";
 
 function App() {
   const [images , setImages] = useState([]);
@@ -34,11 +32,13 @@ function App() {
   }
 
   return (
-    <div className="app">
-      {/* <Router> */}
-        <h1>Hello World!</h1>
-      {/* </Router> */}
+    <Router>
+      <div className="app">
+      <Switch>
+        <Route exact path="/" component={Home} />
+      </Switch>
     </div>
+    </Router>
   );
 }
 
