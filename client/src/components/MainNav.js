@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import Search from "./Search";
 import { SiAffinityphoto } from 'react-icons/si';
 
-const NavBar = () => {
+const MainNav = () => {
     const [term, setTerm] = useState("");
   return (
     <div>
@@ -22,4 +22,4 @@ const NavBar = () => {
   );
 };
 
-export default NavBar;
+export default MainNav;

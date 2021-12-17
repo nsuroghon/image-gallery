@@ -10,7 +10,7 @@ const Home = () => (
 
     {/* <h1 className="font-bold text-6xl py-8 mx-8 lg:mx-20">{term}</h1> */}
     
-    {/* <Gallery /> */}
+    <Gallery />
 
   </Fragment>
 );
