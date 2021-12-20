@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import { Input, Button } from 'reactstrap';
 import Search from "./Search";
 import { SiAffinityphoto } from 'react-icons/si';
 
@@ -6,7 +7,8 @@ const MainNav = () => {
     const [term, setTerm] = useState("");
   return (
     <div>
-      <h1>Hello World!</h1>
+      <h1>Title!</h1>
+      <Search />
     </div>
   //   <nav className="grid grid-flow-col grid-cols-2 sm:grid-cols-3 shadow sticky top-0 bg-white w-full mx-none pb-4">
   //       <div className="flex items-center justify-self-start ml-4 my-2"> 
