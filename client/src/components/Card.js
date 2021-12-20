@@ -1,6 +1,9 @@
 import React from 'react'
 
-const Card = ({ image }) => {
+const Card = ({ image, loading }) => {
+  if (loading) {
+    return <h2>Loading...</h2>
+  }
 
     const tags = image.tags.split(',');
 

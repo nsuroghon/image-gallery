@@ -8,7 +8,7 @@ const MainNav = () => {
   return (
     <div>
       <h1>Title!</h1>
-      <Search />
+      {/* <Search /> */}
     </div>
   //   <nav className="grid grid-flow-col grid-cols-2 sm:grid-cols-3 shadow sticky top-0 bg-white w-full mx-none pb-4">
   //       <div className="flex items-center justify-self-start ml-4 my-2"> 

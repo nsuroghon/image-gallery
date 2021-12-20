@@ -1,22 +1,32 @@
 import React, {useState, useEffect} from 'react';
-import { Pagination, PaginationLink, PaginationItem } from 'reactstrap';
+import { Pagination, PaginationLink, PaginationItem, Input, Button } from 'reactstrap';
+import axios, { Axios } from 'axios';
 import Card from './Card';
 
 const Gallery = () => {
-  // Images from api --> state
   const [images , setImages] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
-  // if left empty returns random photos
   const [term, setTerm] = useState("");
 
+  const [currentPage, setCurrentPage] = useState(1)
+  const [postPerPage, setPostPerPage] = useState(10)
+
   useEffect(() => {
-    fetch(`https://pixabay.com/api/?key=22126125-95b100b3f165139e739090fac&q=${term}&image_type=photo&pretty=true`)
-    .then( res => res.json())
-    .then(data => {
-      setImages(data.hits);
+    const fetchImages = async() => {
+      setIsLoading(true);
+      const res = await axios.get(`https://pixabay.com/api/?key=22126125-95b100b3f165139e739090fac&q=${term}&image_type=photo&pretty=true`);
+      setImages(res.data.hits);
       setIsLoading(false);
-    })
-    .catch(err => console.log(err))
+    }
+    fetchImages();
+    // fetch(`https://pixabay.com/api/?key=22126125-95b100b3f165139e739090fac&q=${term}&image_type=photo&pretty=true`)
+    // .then( res => res.json())
+    // .then(data => {
+    //   console.log(data)
+    //   setImages(data.hits);
+    //   setIsLoading(false);
+    // })
+    // .catch(err => console.log(err))
     // whenever the search term changes makes sure the fetch called again with new parameter
   }, [term]);
 
@@ -24,6 +34,14 @@ const Gallery = () => {
     <div>
       {/* <div>
         <h1 className="font-bold text-6xl py-8 mx-8 lg:mx-20">{term}</h1>
+
+        <Input onChange={e => setText(e.target.value)} type='search'></Input>
+            <Button onSubmit={onSubmit}
+                color="secondary"
+                outline
+                >
+                Search
+            </Button>
       </div> */}
       <div className="container mx-auto py-0">
         {isLoading ? 
