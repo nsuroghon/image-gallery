@@ -1,7 +1,7 @@
 import React from 'react'
 import { Pagination, PaginationItem, PaginationLink } from 'reactstrap';
 
-const PaginationNav = ({ imagesPerPage, totalImages }) => {
+const PaginationNav = ({ imagesPerPage, totalImages, paginate }) => {
     const pageNumbers = [];
     
     for(let i = 1; i <= Math.ceil(totalImages / imagesPerPage); i++) {
@@ -14,13 +14,13 @@ const PaginationNav = ({ imagesPerPage, totalImages }) => {
             <PaginationItem>
                 <PaginationLink
                 first
-                href="!#"
+                href="#"
                 />
             </PaginationItem>
 
             <PaginationItem>
                 <PaginationLink
-                href="!#"
+                href="#"
                 previous
                 />
             </PaginationItem>
@@ -28,7 +28,8 @@ const PaginationNav = ({ imagesPerPage, totalImages }) => {
             {pageNumbers.map(number => (
                 <PaginationItem key={number}>
                     <PaginationLink
-                        href="!#">
+                    onClick={() => paginate(number)}
+                    href="">
                     {number}
                     </PaginationLink>
                 </PaginationItem>
@@ -36,14 +37,14 @@ const PaginationNav = ({ imagesPerPage, totalImages }) => {
 
             <PaginationItem>
                 <PaginationLink
-                href="!#"
+                href="#"
                 next
             />
             </PaginationItem>
 
             <PaginationItem>
                 <PaginationLink
-                href="!#"
+                href="#"
                 last
                 />
             </PaginationItem>

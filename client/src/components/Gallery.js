@@ -11,7 +11,7 @@ const Gallery = () => {
   const [term, setTerm] = useState("");
 
   const [currentPage, setCurrentPage] = useState(1)
-  const [imagesPerPage, setImagesPerPage] = useState(10)
+  const [imagesPerPage] = useState(10)
 
   useEffect(() => {
     const fetchImages = async() => {
@@ -36,6 +36,9 @@ const Gallery = () => {
   const indexOfLastImage = currentPage * imagesPerPage;
   const indexOfFirstImage = indexOfLastImage - imagesPerPage;
   const currentImages = images.slice(indexOfFirstImage, indexOfLastImage);
+ 
+  // change page
+  const paginate = pageNumber => setCurrentPage(pageNumber)
 
 
   return (
@@ -65,59 +68,10 @@ const Gallery = () => {
           ))}
         </div>}
       </div>
-      <PaginationNav imagesPerPage={imagesPerPage} totalImages={images.length}/>
-
-      {/* <Pagination style={{display: 'flex', justifyContent: 'center', margin: '2%'}}>
-        <PaginationItem>
-          <PaginationLink
-            first
-            href="#"
-          />
-        </PaginationItem>
-        <PaginationItem>
-          <PaginationLink
-            href="#"
-            previous
-          />
-        </PaginationItem>
-        <PaginationItem>
-          <PaginationLink href="#">
-            1
-          </PaginationLink>
-        </PaginationItem>
-        <PaginationItem>
-          <PaginationLink href="#">
-            2
-          </PaginationLink>
-        </PaginationItem>
-        <PaginationItem>
-          <PaginationLink href="#">
-            3
-          </PaginationLink>
-        </PaginationItem>
-        <PaginationItem>
-          <PaginationLink href="#">
-            4
-          </PaginationLink>
-        </PaginationItem>
-        <PaginationItem>
-          <PaginationLink href="#">
-            5
-          </PaginationLink>
-        </PaginationItem>
-        <PaginationItem>
-          <PaginationLink
-            href="#"
-            next
-          />
-        </PaginationItem>
-        <PaginationItem>
-          <PaginationLink
-            href="#"
-            last
-          />
-        </PaginationItem>
-      </Pagination> */}
+      <PaginationNav 
+        imagesPerPage={imagesPerPage} 
+        totalImages={images.length} 
+        paginate={paginate}/>
     </div>
 
     )
