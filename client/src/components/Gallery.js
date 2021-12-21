@@ -1,7 +1,9 @@
 import React, {useState, useEffect} from 'react';
-import { Pagination, PaginationLink, PaginationItem, Input, Button } from 'reactstrap';
+// import { Pagination, PaginationLink, PaginationItem, Input, Button } from 'reactstrap';
 import axios, { Axios } from 'axios';
 import Card from './Card';
+import PaginationNav from './Pagination';
+
 
 const Gallery = () => {
   const [images , setImages] = useState([]);
@@ -9,7 +11,7 @@ const Gallery = () => {
   const [term, setTerm] = useState("");
 
   const [currentPage, setCurrentPage] = useState(1)
-  const [postPerPage, setPostPerPage] = useState(10)
+  const [imagesPerPage, setImagesPerPage] = useState(10)
 
   useEffect(() => {
     const fetchImages = async() => {
@@ -30,6 +32,12 @@ const Gallery = () => {
     // whenever the search term changes makes sure the fetch called again with new parameter
   }, [term]);
 
+  // get current images
+  const indexOfLastImage = currentPage * imagesPerPage;
+  const indexOfFirstImage = indexOfLastImage - imagesPerPage;
+  const currentImages = images.slice(indexOfFirstImage, indexOfLastImage);
+
+
   return (
     <div>
       {/* <div>
@@ -49,13 +57,17 @@ const Gallery = () => {
         
         // <div className="grid grid-flow-row-dense grid-cols-3 gap-x-6 gap-y-6">
         <div className="masonry before:box-inherit after:box-inherit overflow-y-scroll">
-        {images.map(image => (
+        {currentImages.map(image => (
+        // without pagination
           <Card key={image.id} image={image}/>
+        // with pagination
+          // <Card key={image.id} image={currentImages}/>
           ))}
         </div>}
       </div>
+      <PaginationNav imagesPerPage={imagesPerPage} totalImages={images.length}/>
 
-      <Pagination style={{display: 'flex', justifyContent: 'center', margin: '2%'}}>
+      {/* <Pagination style={{display: 'flex', justifyContent: 'center', margin: '2%'}}>
         <PaginationItem>
           <PaginationLink
             first
@@ -105,7 +117,7 @@ const Gallery = () => {
             last
           />
         </PaginationItem>
-      </Pagination>
+      </Pagination> */}
     </div>
 
     )
