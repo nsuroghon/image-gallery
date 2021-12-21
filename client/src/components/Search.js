@@ -14,7 +14,7 @@ const Search = ({ searchText }) => {
     return (
         <div>
             <Input onChange={e => setText(e.target.value)} type='search'></Input>
-            <Button onSubmit={onSubmit}
+            <Button
                 color="secondary"
                 outline
                 >

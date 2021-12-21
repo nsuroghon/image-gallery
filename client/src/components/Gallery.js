@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
-// import { Pagination, PaginationLink, PaginationItem, Input, Button } from 'reactstrap';
-import axios, { Axios } from 'axios';
+import { Input, Button } from 'reactstrap';
+import axios from 'axios';
 import Card from './Card';
 import PaginationNav from './Pagination';
 
@@ -11,7 +11,7 @@ const Gallery = () => {
   const [term, setTerm] = useState("");
 
   const [currentPage, setCurrentPage] = useState(1)
-  const [imagesPerPage] = useState(10)
+  const [imagesPerPage] = useState(15)
 
   useEffect(() => {
     const fetchImages = async() => {
@@ -40,20 +40,16 @@ const Gallery = () => {
   // change page
   const paginate = pageNumber => setCurrentPage(pageNumber)
 
+  // change search term
+
 
   return (
     <div>
-      {/* <div>
-        <h1 className="font-bold text-6xl py-8 mx-8 lg:mx-20">{term}</h1>
+      <div>
+        {/* <h1 className="font-bold text-6xl py-8 mx-8 lg:mx-20">{term}</h1> */}
 
-        <Input onChange={e => setText(e.target.value)} type='search'></Input>
-            <Button onSubmit={onSubmit}
-                color="secondary"
-                outline
-                >
-                Search
-            </Button>
-      </div> */}
+      
+      </div>
       <div className="container mx-auto py-0">
         {isLoading ? 
         <h1 className="text-6xl text-center mx-auto mt-32">Loading...</h1>: 

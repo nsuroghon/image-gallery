@@ -11,7 +11,7 @@ const PaginationNav = ({ imagesPerPage, totalImages, paginate }) => {
     return (
         <Pagination style={{display: 'flex', justifyContent: 'center', margin: '2%'}}>
             
-            <PaginationItem>
+            {/* <PaginationItem>
                 <PaginationLink
                 first
                 href="#"
@@ -23,7 +23,7 @@ const PaginationNav = ({ imagesPerPage, totalImages, paginate }) => {
                 href="#"
                 previous
                 />
-            </PaginationItem>
+            </PaginationItem> */}
 
             {pageNumbers.map(number => (
                 <PaginationItem key={number}>
@@ -35,7 +35,7 @@ const PaginationNav = ({ imagesPerPage, totalImages, paginate }) => {
                 </PaginationItem>
             ))}
 
-            <PaginationItem>
+            {/* <PaginationItem>
                 <PaginationLink
                 href="#"
                 next
@@ -47,7 +47,7 @@ const PaginationNav = ({ imagesPerPage, totalImages, paginate }) => {
                 href="#"
                 last
                 />
-            </PaginationItem>
+            </PaginationItem> */}
 
       </Pagination>
     )
