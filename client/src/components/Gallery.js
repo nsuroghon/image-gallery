@@ -3,6 +3,7 @@ import { Input, Button } from 'reactstrap';
 import axios from 'axios';
 import Card from './Card';
 import PaginationNav from './Pagination';
+import Search from './Search';
 
 
 const Gallery = () => {
@@ -10,8 +11,8 @@ const Gallery = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [term, setTerm] = useState("");
 
-  const [currentPage, setCurrentPage] = useState(1)
-  const [imagesPerPage] = useState(15)
+  const [currentPage, setCurrentPage] = useState(1);
+  const [imagesPerPage] = useState(15);
 
   useEffect(() => {
     const fetchImages = async() => {
@@ -21,15 +22,6 @@ const Gallery = () => {
       setIsLoading(false);
     }
     fetchImages();
-    // fetch(`https://pixabay.com/api/?key=22126125-95b100b3f165139e739090fac&q=${term}&image_type=photo&pretty=true`)
-    // .then( res => res.json())
-    // .then(data => {
-    //   console.log(data)
-    //   setImages(data.hits);
-    //   setIsLoading(false);
-    // })
-    // .catch(err => console.log(err))
-    // whenever the search term changes makes sure the fetch called again with new parameter
   }, [term]);
 
   // get current images
@@ -38,13 +30,15 @@ const Gallery = () => {
   const currentImages = images.slice(indexOfFirstImage, indexOfLastImage);
  
   // change page
-  const paginate = pageNumber => setCurrentPage(pageNumber)
+  const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
   // change search term
+  const searchText = (text) => setTerm(text);
 
 
   return (
     <div>
+      <Search searchText={searchText}/>
       <div>
         {/* <h1 className="font-bold text-6xl py-8 mx-8 lg:mx-20">{term}</h1> */}
 

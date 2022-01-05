@@ -1,26 +1,35 @@
 import React, { useState } from 'react'
-import { Input, Button } from 'reactstrap';
+import { Input, Form, Button, InputGroup, FormGroup } from 'reactstrap';
 // import { GoSearch } from 'react-icons/go';
 
 const Search = ({ searchText }) => {
-    const [text, setText] = useState('')
+    const [text, setText] = useState('');
 
     const onSubmit = (e) => {
         e.preventDefault();
-
-        searchText(text);
+        searchText(text)
     }
-
+ 
     return (
         <div>
-            <Input onChange={e => setText(e.target.value)} type='search'></Input>
-            <Button
-                color="secondary"
-                outline
-                >
-                Search
-            </Button>
+        <Form onSubmit={onSubmit}>
+            <InputGroup>
+                    <Input 
+                    type='text'
+                    placeholder='Search...'
+                    onChange={ e => setText(e.target.value)}
+                    />
+                    <Button
+                    type='submit'
+                    color="secondary"
+                    outline
+                    >
+                    Submit
+                    </Button>
+                </InputGroup>   
+            </Form>
         </div>
+
 
     // <div className="flex justify-auto md:justify-center lg:justify-center rounded-full shadow-xl ml-0 sm:ml-8 my-4 lg:my-2 mr-4 sm:mr-0 w-auto lg:w-full">
     //   <form onSubmit={onSubmit} className="rounded-full w-max-xl lg:w-full px-6 leading-tight focus:outline-none bg-gray-100">
