@@ -10,14 +10,15 @@ const Gallery = () => {
   const [images , setImages] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [term, setTerm] = useState("");
-
+ 
+  // pagination state
   const [currentPage, setCurrentPage] = useState(1);
   const [imagesPerPage] = useState(15);
 
   useEffect(() => {
     const fetchImages = async() => {
       setIsLoading(true);
-      const res = await axios.get(`https://pixabay.com/api/?key=22126125-95b100b3f165139e739090fac&q=${term}&image_type=photo&pretty=true`);
+      const res = await axios.get(`https://pixabay.com/api/?key=22126125-95b100b3f165139e739090fac&q=${term}&image_type=photo&pretty=true&safesearch=true`);
       setImages(res.data.hits);
       setIsLoading(false);
     }
@@ -34,7 +35,6 @@ const Gallery = () => {
 
   // change search term
   const searchText = (text) => setTerm(text);
-
 
   return (
     <div>
