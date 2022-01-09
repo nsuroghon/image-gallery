@@ -17,6 +17,9 @@ const Gallery = () => {
 
   useEffect(() => {
     const fetchImages = async() => {
+      const apiKey = process.env.REACT_APP_PIXABAY_API_KEY
+      console.log(apiKey)
+
       setIsLoading(true);
       const res = await axios.get(`https://pixabay.com/api/?key=22126125-95b100b3f165139e739090fac&q=${term}&image_type=photo&pretty=true&safesearch=true`);
       setImages(res.data.hits);
@@ -38,6 +41,7 @@ const Gallery = () => {
 
   return (
     <div>
+      <h1>{term}</h1>
       <Search searchText={searchText}/>
       <div>
         {/* <h1 className="font-bold text-6xl py-8 mx-8 lg:mx-20">{term}</h1> */}

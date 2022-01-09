@@ -1,7 +1,7 @@
-const { default: axios } = require("axios");
+const axios = require("axios");
 const router = require("express").Router();
 
-const pixabayApiUrl = "https://pixabay.com/api/?key=22126125-95b100b3f165139e739090fac&q=&image_type=photo&pretty=true"
+// const pixabayApiUrl = "https://pixabay.com/api/?key=22126125-95b100b3f165139e739090fac&q=&image_type=photo&pretty=true"
 // remove term 
 // "https://pixabay.com/api/?key=22126125-95b100b3f165139e739090fac&q=${term}&image_type=photo&pretty=true"
 

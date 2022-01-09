@@ -5,11 +5,10 @@
   "main": "server.js",
   "dependencies": {
     "axios": "^0.24.0",
-    "concurrently": "^6.4.0",
+    "body-parser": "^1.19.1",
     "cors": "^2.8.5",
-    "dotenv": "^10.0.0",
-    "express": "^4.17.1",
-    "mongoose": "^6.1.1"
+    "express": "^4.17.2",
+    "mongoose": "^6.1.5"
   },
   "scripts": {
     "client-install": "npm install --prefix client",
@@ -27,5 +26,10 @@
   "bugs": {
     "url": "https://github.com/nsuroghon/image-gallery/issues"
   },
-  "homepage": "https://github.com/nsuroghon/image-gallery#readme"
+  "homepage": "https://github.com/nsuroghon/image-gallery#readme",
+  "devDependencies": {
+    "concurrently": "^7.0.0",
+    "dotenv": "^10.0.0",
+    "nodemon": "^2.0.15"
+  }
 }

@@ -1,27 +1,29 @@
-// require statements
-const express = require("express");
-const cors = require('cors');
-const mongoose = require("mongoose");
-
-// storing environment variables in .env file
 require('dotenv').config();
+
+const express = require("express");
+const bodyParser = require("body-parser")
+const cors = require("cors");
+const mongoose = require("mongoose");
 
 //create express server
 const app = express();
 const PORT = process.env.PORT || 3001;
 
+// use body parser to get data from POST requests
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 
 // middlewear
-app.use(cors({
-  origin: 'http://localhost:3001',
-  credentials: true
-}));
+// app.use(cors({
+//   origin: 'http://localhost:3001',
+//   credentials: true
+// }));
 
-// app.use(express.urlencoded({ extended: true }));
-// parse json - server will send & recieve json
-app.use(express.json());
+// Use API routes from the api folder
+const apis = require("./routes/api");
+app.use("/api", apis);
 
-
+// app.use(express.json());
 
 // Serve up static assets (usually on heroku)
 // if (process.env.NODE_ENV === "production") {

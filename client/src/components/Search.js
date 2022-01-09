@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { Input, Form, Button, InputGroup, FormGroup, List, ListGroupItem, ListInlineItem } from 'reactstrap';
 // import { GoSearch } from 'react-icons/go';
 
-const Search = ({ searchText, searchCategory}) => {
+const Search = ({ searchText}) => {
     const [text, setText] = useState('');
 
     const categories = ['backgrounds', 'fashion', 'nature', 'science', 'education', 'feelings', 'health', 'people', 'religion', 'places', 'animals', 'industry', 'computer', 'food', 'sports', 'transportation', 'travel', 'buildings', 'business', 'music']
@@ -22,6 +22,7 @@ const Search = ({ searchText, searchCategory}) => {
 
     return (
     <div>
+
         <Form onSubmit={onSubmit}>
             <InputGroup>
                     <Input 
